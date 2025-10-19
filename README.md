@@ -15,7 +15,7 @@ This project was developed as part of a Hands-On Round Problem Statement to desi
 - **📋 Unified Activity Listing** - Displays all activities (Classes, Assignments, Quizzes, and Discussions) in a scrollable, card-based layout
 - **⚡ Cross-Platform Support** - Built with Expo + React Native + React Native Paper, runs on both Web and Mobile
 - **🧭 Contextual Actions** - Activities show relevant "Next Steps" based on status (Start, Continue, Review)
-- **🧩 Filter & Sort Controls** - Quickly find activities by type, status, or due date
+- **🧩 Filter & Sort Controls** - Quickly find activities by type
 - **🌓 Light / Dark Mode** - Adapts to user preference or system theme
 - **📱 Responsive Design** - Optimized layouts for phones, tablets, and browsers
 - **🧪 Testing Ready** - Basic setup included for Jest / React Native Testing Library
@@ -53,7 +53,7 @@ learning-activities/
 1. **Activities Load** - From local mock data or public API
 2. **UI Render** - Activities displayed in cards with details like title, type, status, and due date
 3. **Next Action** - Button changes dynamically: `"Start"`, `"Continue"`, or `"Review"`
-4. **Filter Application** - Users can filter activities by status/type
+4. **Filter Application** - Users can filter activities by type of activity
 5. **Interaction** - Selecting an activity navigates to detail or action page
 
 ## 🚀 Getting Started
