@@ -1,50 +1,82 @@
-# Welcome to your Expo app 👋
+# 🧭 Activity Listing App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+### 📱 A Cross-Platform Learning Activity Dashboard (Web + Mobile)
 
-## Get started
+This project is built as part of a **Hands-On Round Problem Statement** — to design and develop a **core learner-facing screen** for an online learning platform that helps users view and manage their learning activities across programs like AI, Machine Learning, and Cloud Computing.
 
-1. Install dependencies
+The app lists all **learning activities** (Online Classes, Assignments, Quizzes, and Discussions) in a clean, responsive, and accessible interface — powered by a **single Expo codebase** that works seamlessly on **both Web and Mobile**.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 🚀 Features
 
-   ```bash
-   npx expo start
-   ```
+- 📋 **Unified Activity Listing**  
+  Displays all activities (Class, Assignment, Quiz, Discussion) in a scrollable, card-based layout.
 
-In the output, you'll find options to open the app in a
+- ⚡ **Cross-Platform Codebase**  
+  Built with **Expo + React Native + React Native Paper**, runs on both **Web** and **Mobile**.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- 🧭 **Contextual Actions**  
+  Activities show relevant "Next Steps" based on status — *Start, Continue, Review*.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- 🧩 **Filter & Sort Controls**  
+  Allows learners to quickly find activities by type, status, or due date.
 
-## Get a fresh project
+- 🌓 **Light / Dark Mode Support**  
+  Adapts to user preference or system theme.
 
-When you're ready, run:
+- 📱 **Responsive Design**  
+  Optimized layouts for phones, tablets, and browsers.
 
+- 🧪 **Component & Unit Testing Ready**  
+  Basic setup included for Jest / React Native Testing Library.
+
+---
+
+## 🏗️ Tech Stack
+
+| Category | Technology |
+|-----------|-------------|
+| Framework | **Expo (React Native)** |
+| UI Library | **React Native Paper** |
+| Animations | **React Native Reanimated** |
+| State Management | React Hooks / Context API |
+| Routing | Expo Router or React Navigation |
+| Theming | React Native Paper ThemeProvider |
+| Data | Local mock JSON / API support |
+| Platform | Web, Android (via Expo) |
+
+---
+
+## 🧠 Architecture Overview
+
+- **components/** → Reusable UI elements (e.g., `ActivityCard`, `FilterBar`)  
+- **screens/** → Core screens (e.g., `ActivityListScreen`)  
+- **data/** → Mock data or API handlers  
+- **themes/** → Light/Dark mode configuration  
+- **App.js** → Root entry point  
+- **package.json** → Dependencies and scripts  
+
+---
+
+## 🧩 Activity Flow Summary
+
+1. **Activities Load**
+   - From local mock data or public API.  
+2. **UI Render**
+   - Activities displayed in cards with details like title, type, status, and due date.  
+3. **Next Action**
+   - Button changes dynamically: `"Start"`, `"Continue"`, or `"Review"`.  
+4. **Filter Application**
+   - User can filter activities by status/type.  
+5. **Interaction**
+   - Selecting an activity navigates to detail or action page.
+
+---
+
+## 🛠️ Setup & Installation
+
+### 1️⃣ Clone the Repository
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
