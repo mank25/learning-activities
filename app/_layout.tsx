@@ -1,24 +1,49 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import React from 'react';
+import { Platform, StatusBar, useColorScheme, View } from 'react-native';
+import { PaperProvider } from 'react-native-paper';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { darkTheme, lightTheme } from '../theme';
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
+// Optional: you can use this hook to smoothly animate theme switching later
+const usePreferredTheme = () => {
+  const colorScheme = useColorScheme();
+  return colorScheme === 'dark' ? darkTheme : lightTheme;
 };
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
+export default function Layout() {
+  const theme = usePreferredTheme();
+  const isDark = theme.dark;
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <PaperProvider theme={theme}>
+        {/* Set consistent background across devices */}
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: theme.colors.background,
+          }}
+        >
+          {/* Status bar style adapts automatically */}
+          <StatusBar
+            barStyle={isDark ? 'light-content' : 'dark-content'}
+            backgroundColor={theme.colors.background}
+            translucent={Platform.OS === 'android'}
+          />
+
+          {/* Expo Router Stack */}
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              animation: 'fade', // subtle smooth screen transitions
+              contentStyle: {
+                backgroundColor: theme.colors.background,
+              },
+            }}
+          />
+        </View>
+      </PaperProvider>
+    </SafeAreaProvider>
   );
 }
